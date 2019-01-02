@@ -10,16 +10,54 @@
         span{font-weight: bold; text-transform: uppercase; text-decoration: underline overline;}
         h1.tieude{text-shadow: 14px 3px 4px;text-align: center;line-height: 2;}
         p.demuc1{font-variant: common-ligatures small-caps; font-kerning: normal;}
-        p.chinh1{white-space: pre-wrap;}
+        p.chinh1{white-space: pre-wrap;font-feature-settings: "tnum"; text-align: justify;
+  text-align-last: center;}
         .italic{font-style: italic;}
         .oblique{font-style: oblique;}
+        divp {
+  width: 200px;
+  border: 1px solid;
+  padding: 2px 5px;
+
+  /* BOTH of the following are required for text-overflow */
+  white-space: nowrap;
+  overflow: hidden;
+}
+        .overflow-visible {
+  white-space: initial;
+}
+
+.overflow-clip {
+  text-overflow: clip;
+}
+
+.overflow-ellipsis {
+  text-overflow: ellipsis;
+}
+
+.overflow-string {
+  /* Not supported in most browsers, 
+     see the 'Browser compatibility' section below */
+  text-overflow: " [..]"; 
+}
+        .breakAll {
+  word-break: break-all;
+}
+        p.manual {
+  -webkit-hyphens: manual;
+  -ms-hyphens: manual;
+            hyphens: manual;}
+        .text-orientation{
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+}
     </style>
 </head>
 <body>
 <h1 class="tieude">Tommy the cat</h1>
 
 <p class="demuc">I remember as if it were a meal ago...</p>
-
+    <p>textindent</p>
 <p class="chinh">Said <span>Tommy</span> the Cat as he reeled back to clear whatever foreign matter
     may have nestled its way into his mighty throat. <span class="1">Many</span> a fat alley rat
     had met its demise while staring point blank down the cavernous barrel of
@@ -37,9 +75,9 @@
     predator — Tommy the cat had many a story to tell. But it was a rare
     occasion such as this that he did.</p>
 <h1 class="tieude1">Tommy the cat</h1>
-
+    <p>font-variant,font-kerning</p>
 <p class="demuc1">I remember as if it were a meal ago...</p>
-
+    <p>white-space,font-stretch, font-feature-settings,text-align-last</p>
 <p class="chinh1" style="font-stretch:ultra-expanded;">Said Tommy the Cat as he reeled back to clear whatever foreign matter
     may have nestled its way into his mighty throat. Many a fat alley rat
     had met its demise while staring point blank down the cavernous barrel of
@@ -51,5 +89,17 @@
       </p>
     <p class="italic">Hello</p>
     <p class="oblique">Hello</p>
-</body>
+    <div>
+    <p class="overflow-visible">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+<p class="overflow-clip">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+<p class="overflow-ellipsis">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+<p class="overflow-string">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+    </div>
+    <p>2. <code>word-break: break-all</code></p>
+<p class="breakAll narrow">This is a long and
+ Honorificabilitudinitatibus califragilisticexpialidocious Taumatawhakatangihangakoauauotamateaturipukakapikimaungahoronukupokaiwhenuakitanatahu
+ グレートブリテンおよび北アイルランド連合王国という言葉は本当に長い言葉</p>
+    <p lang="en" class="manual">An extreme&shy;ly long English word</p>
+    <p class="text-orientation">Lorem ipsum dolet semper quisquam.</p>
+        </body>
 </html>
