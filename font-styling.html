@@ -27,15 +27,15 @@
   white-space: initial;
 }
 
-.overflow-clip {
+.overflow.overflow-clip {
   text-overflow: clip;
 }
 
-.overflow-ellipsis {
+.overflow.overflow-ellipsis {
   text-overflow: ellipsis;
 }
 
-.overflow-string {
+.overflow.overflow-string {
   /* Not supported in most browsers, 
      see the 'Browser compatibility' section below */
   text-overflow: " [..]"; 
@@ -50,6 +50,15 @@
         .text-orientation{
   writing-mode: vertical-rl;
   text-orientation: upright;
+}
+        p.overflow {
+  width: 200px;
+  border: 1px solid;
+  padding: 2px 5px;
+
+  /* BOTH of the following are required for text-overflow */
+  white-space: nowrap;
+  overflow: hidden;
 }
     </style>
 </head>
@@ -90,10 +99,10 @@
     <p class="italic">Hello</p>
     <p class="oblique">Hello</p>
     <div>
-    <p class="overflow-visible">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-<p class="overflow-clip">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-<p class="overflow-ellipsis">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-<p class="overflow-string">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+    <p class="overflow overflow-visible">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+<p class="overflow overflow-clip">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+<p class="overflow overflow-ellipsis">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+<p class="overflow overflow-string">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
     </div>
     <p>2. <code>word-break: break-all</code></p>
 <p class="breakAll narrow">This is a long and
